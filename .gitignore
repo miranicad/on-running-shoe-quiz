@@ -1,1 +1,17 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# Editor directories and files
+.idea
 *.DS_Store
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Vite
+.vite
