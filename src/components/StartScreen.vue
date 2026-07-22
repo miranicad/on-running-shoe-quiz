@@ -75,7 +75,7 @@ const startQuiz = () => {
     bottom: 0;
     height: 90%;
     z-index: 1;
-    animation: runIn 1.2s ease-out forwards;
+    animation: slideInRight 1.2s ease-out forwards;
 
     img {
       display: block;
@@ -113,7 +113,7 @@ const startQuiz = () => {
   }
 }
 
-@keyframes runIn {
+@keyframes slideInRight {
   0% {
     transform: translateX(100%);
     opacity: 0;
