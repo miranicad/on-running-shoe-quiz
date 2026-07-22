@@ -109,6 +109,7 @@ const startQuiz = () => {
     color: $white;
     border: 0;
     cursor: pointer;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
   }
 
   &__subtitle {
