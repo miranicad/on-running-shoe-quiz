@@ -45,6 +45,8 @@ const startQuiz = () => {
     min-height: 0;
     padding: 60px 40px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 
     &::after {
       content: '';
@@ -146,6 +148,7 @@ const startQuiz = () => {
   .start-screen {
     &__content {
       padding: 50px 30px;
+      align-items: flex-start;
 
       &::after {
         height: 300px;
@@ -176,6 +179,7 @@ const startQuiz = () => {
   .start-screen {
     &__content {
       padding: 90px 28px 20px;
+      align-items: flex-start;
 
       &::after {
         height: 250px;
