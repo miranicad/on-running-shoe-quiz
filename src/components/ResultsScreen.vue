@@ -10,7 +10,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['restart'])
+const emit = defineEmits(['restart', 'go-home'])
 
 
 const sortedShoes = computed(() => {
@@ -54,7 +54,7 @@ const restartQuiz = () => {
 
 <template>
   <div class="results-screen">
-    <NavBar />
+    <NavBar @go-home="emit('go-home')" />
 
     <main class="results-screen__content">
       <div class="results-screen__header">

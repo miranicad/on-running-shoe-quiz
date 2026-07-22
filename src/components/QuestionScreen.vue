@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import NavBar from './NavBar.vue'
 import quizData from '../../data.json'
 
-const emit = defineEmits(['quiz-complete'])
+const emit = defineEmits(['quiz-complete', 'go-home'])
 
 const currentQuestionId = ref(0)
 const shoeRatings = ref({})
@@ -31,7 +31,7 @@ const selectAnswer = (answer) => {
 
 <template>
   <div class="question-screen">
-    <NavBar />
+    <NavBar @go-home="emit('go-home')" />
 
     <main class="question-screen__content">
       <div class="question-screen__header">

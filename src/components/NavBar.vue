@@ -1,5 +1,7 @@
 <script setup>
 const logoImage = `${import.meta.env.BASE_URL}assets/On-Logo.png`
+
+const emit = defineEmits(['go-home'])
 </script>
 
 <template>
@@ -9,7 +11,7 @@ const logoImage = `${import.meta.env.BASE_URL}assets/On-Logo.png`
       <span class="navbar__menu-line"></span>
       <span class="navbar__menu-line"></span>
     </button>
-    <div class="navbar__logo">
+    <div class="navbar__logo" @click="emit('go-home')" style="cursor: pointer;">
      <img :src="logoImage">
     </div>
   </nav>

@@ -36,16 +36,19 @@ const restartQuiz = () => {
   <QuestionScreen
     v-if="currentScreen === 'question'"
     @quiz-complete="handleQuizComplete"
+    @go-home="restartQuiz"
   />
 
   <LoadingScreen
     v-if="currentScreen === 'loading'"
     @loading-complete="showResults"
+    @go-home="restartQuiz"
   />
 
   <ResultsScreen
     v-if="currentScreen === 'results'"
     :results="quizResults"
     @restart="restartQuiz"
+    @go-home="restartQuiz"
   />
 </template>

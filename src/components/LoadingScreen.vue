@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import NavBar from './NavBar.vue'
 
-const emit = defineEmits(['loading-complete'])
+const emit = defineEmits(['loading-complete', 'go-home'])
 
 const loaderImage = `${import.meta.env.BASE_URL}assets/loader.gif`
 
@@ -15,7 +15,7 @@ onMounted(() => {
 
 <template>
   <div class="loading-screen">
-    <NavBar />
+    <NavBar @go-home="emit('go-home')" />
 
     <main class="loading-screen__content">
       <img :src="loaderImage" alt="Loading..." class="loading-screen__loader" />
