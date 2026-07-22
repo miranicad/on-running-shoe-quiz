@@ -110,6 +110,17 @@ const startQuiz = () => {
     border: 0;
     cursor: pointer;
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: translate(0, 0);
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+    }
   }
 
   &__subtitle {
