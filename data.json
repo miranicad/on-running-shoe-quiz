@@ -3,41 +3,49 @@
     {
       "id": "cloud",
       "name": "Cloud",
+      "color": "Olive & White",
       "rating": 0
     },
     {
       "id": "cloudx",
       "name": "Cloud X",
+      "color": "Grey & Neon",
       "rating": 0
     },
     {
       "id": "cloudflow",
       "name": "Cloudflow",
+      "color": "Blue & Navy",
       "rating": 0
     },
     {
       "id": "cloudventure",
       "name": "Cloudventure",
+      "color": "Forest & Yellow",
       "rating": 0
     },
     {
       "id": "cloudsurfer",
       "name": "Cloudsurfer",
+      "color": "Mineral & Navy",
       "rating": 0
     },
     {
       "id": "cloudventure_waterproof",
       "name": "Cloudventure Waterproof",
+      "color": "Black & Orange",
       "rating": 0
     },
     {
       "id": "cloudventure_peak",
       "name": "Cloudventure Peak",
+      "color": "Orange & Navy",
       "rating": 0
     },
     {
       "id": "cloudflyer",
       "name": "Cloudflyer",
+      "color": "Black & White",
       "rating": 0
     }
   ],
