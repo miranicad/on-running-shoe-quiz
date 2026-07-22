@@ -8,29 +8,22 @@ const emit = defineEmits(['quiz-complete'])
 const currentQuestionId = ref(0)
 const shoeRatings = ref({})
 
-
 quizData.shoes.forEach(shoe => {
   shoeRatings.value[shoe.id] = 0
 })
-
 
 const currentQuestion = computed(() => {
   return quizData.questions.find(q => q.id === currentQuestionId.value)
 })
 
-
 const selectAnswer = (answer) => {
-
   for (const [shoeId, points] of Object.entries(answer.ratingIncrease)) {
     shoeRatings.value[shoeId] += points
   }
 
-
   if (answer.nextQuestion === '') {
-
     emit('quiz-complete', shoeRatings.value)
   } else {
-
     currentQuestionId.value = answer.nextQuestion
   }
 }
@@ -46,11 +39,9 @@ const selectAnswer = (answer) => {
         <p class="question-screen__subtitle">30 DAYS RISK FREE</p>
       </div>
 
-
       <h2 class="question-screen__question">
         {{ currentQuestion.copy }}
       </h2>
-
 
       <div class="question-screen__answers">
         <button

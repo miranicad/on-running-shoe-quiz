@@ -63,7 +63,7 @@ const restartQuiz = () => {
       </div>
 
       <!-- Top Shoe Card -->
-      <div class="results-screen__card results-screen__card--main">
+      <div class="results-screen__card">
         <div class="results-screen__image">
           <img :src="getShoeImage(topShoe.name)" :alt="topShoe.name" />
         </div>
@@ -142,10 +142,6 @@ const restartQuiz = () => {
     background-color: $card-bg;
     padding: 30px 20px;
     margin-bottom: 15px;
-
-    &--main {
-      background-color: $card-bg;
-    }
 
     h2 {
       font-size: 22px;
