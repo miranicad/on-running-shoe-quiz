@@ -65,6 +65,7 @@ const selectAnswer = (answer) => {
   background-color: $question-bg;
   display: flex;
   flex-direction: column;
+  touch-action: manipulation;
 
   &__content {
     flex: 1;
