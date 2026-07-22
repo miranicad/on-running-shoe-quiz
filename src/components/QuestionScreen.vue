@@ -39,20 +39,24 @@ const selectAnswer = (answer) => {
         <p class="question-screen__subtitle">30 DAYS RISK FREE</p>
       </div>
 
-      <h2 class="question-screen__question">
-        {{ currentQuestion.copy }}
-      </h2>
+      <Transition name="slide" mode="out-in">
+        <div :key="currentQuestionId" class="question-screen__body">
+          <h2 class="question-screen__question">
+            {{ currentQuestion.copy }}
+          </h2>
 
-      <div class="question-screen__answers">
-        <button
-          v-for="answer in currentQuestion.answers"
-          :key="answer.copy"
-          class="question-screen__answer"
-          @click="selectAnswer(answer)"
-        >
-          {{ answer.copy }}
-        </button>
-      </div>
+          <div class="question-screen__answers">
+            <button
+              v-for="answer in currentQuestion.answers"
+              :key="answer.copy"
+              class="question-screen__answer"
+              @click="selectAnswer(answer)"
+            >
+              {{ answer.copy }}
+            </button>
+          </div>
+        </div>
+      </Transition>
     </main>
   </div>
 </template>
@@ -79,6 +83,14 @@ const selectAnswer = (answer) => {
   &__header {
     text-align: center;
     margin-bottom: 80px;
+  }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   &__subtitle {
@@ -134,5 +146,20 @@ const selectAnswer = (answer) => {
       white-space: nowrap;
     }
   }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
 }
 </style>
