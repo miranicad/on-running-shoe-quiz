@@ -52,6 +52,8 @@ onMounted(() => {
     color: $medium-gray;
     font-size: 18px;
     letter-spacing: 2px;
+    text-align: center;
+    white-space: nowrap;
   }
 }
 </style>
