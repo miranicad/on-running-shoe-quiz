@@ -26,13 +26,12 @@ const topShoe = computed(() => sortedShoes.value[0])
 
 const similarShoes = computed(() => sortedShoes.value.slice(1, 3))
 
-// Alle Schuhe mit dem höchsten Rating
+// Handles tie: returns all shoes with highest rating
 const topShoes = computed(() => {
   const maxRating = sortedShoes.value[0]?.rating || 0
   return sortedShoes.value.filter(shoe => shoe.rating === maxRating)
 })
 
-// Namen der Top-Schuhe als Text (z.B. "Cloud and Cloud X")
 const topShoesText = computed(() => {
   const names = topShoes.value.map(shoe => shoe.name)
   if (names.length === 1) {
