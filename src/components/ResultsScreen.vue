@@ -71,7 +71,7 @@ const restartQuiz = () => {
         <p class="results-screen__description">
           Your perfect partner in the world's lightest fully-cushioned shoe for Running Remixed.
         </p>
-        <p class="results-screen__price">200 CHF | {{ topShoe.color }}</p>
+        <p class="results-screen__price">{{ topShoe.price }} CHF | {{ topShoe.color }}</p>
       </div>
       <button class="results-screen__shop-btn">Shop now</button>
 
@@ -88,7 +88,7 @@ const restartQuiz = () => {
             <p class="results-screen__description">
               Your perfect partner in the world's lightest fully-cushioned shoe for Running Remixed.
             </p>
-            <p class="results-screen__price">200 CHF | {{ shoe.color }}</p>
+            <p class="results-screen__price">{{ shoe.price }} CHF | {{ shoe.color }}</p>
           </div>
           <button class="results-screen__shop-btn">Shop now</button>
         </div>

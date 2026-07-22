@@ -4,48 +4,56 @@
       "id": "cloud",
       "name": "Cloud",
       "color": "Olive & White",
+      "price": 150,
       "rating": 0
     },
     {
       "id": "cloudx",
       "name": "Cloud X",
       "color": "Grey & Neon",
+      "price": 180,
       "rating": 0
     },
     {
       "id": "cloudflow",
       "name": "Cloudflow",
       "color": "Blue & Navy",
+      "price": 180,
       "rating": 0
     },
     {
       "id": "cloudventure",
       "name": "Cloudventure",
       "color": "Forest & Yellow",
+      "price": 180,
       "rating": 0
     },
     {
       "id": "cloudsurfer",
       "name": "Cloudsurfer",
       "color": "Mineral & Navy",
+      "price": 180,
       "rating": 0
     },
     {
       "id": "cloudventure_waterproof",
       "name": "Cloudventure Waterproof",
       "color": "Black & Orange",
+      "price": 200,
       "rating": 0
     },
     {
       "id": "cloudventure_peak",
       "name": "Cloudventure Peak",
       "color": "Orange & Navy",
+      "price": 180,
       "rating": 0
     },
     {
       "id": "cloudflyer",
       "name": "Cloudflyer",
       "color": "Black & White",
+      "price": 230,
       "rating": 0
     }
   ],
