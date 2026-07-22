@@ -17,14 +17,11 @@ const startQuiz = () => {
           Take the quiz<br>
           and try your first pair!
         </h1>
-
         <button class="start-screen__button" @click="startQuiz">
           Try On Trial
         </button>
-
         <p class="start-screen__subtitle">30 Days risk free</p>
       </div>
-
       <div class="start-screen__image">
         <img src="/assets/Background Image Start Screen.png" alt="Runner" />
       </div>
@@ -33,93 +30,118 @@ const startQuiz = () => {
 </template>
 
 <style lang="scss" scoped>
+
 .start-screen {
-  min-height: 100vh;
+  min-height: 100svh;
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
-}
+  overflow: hidden;
 
-.start-screen {
   &__content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 60px 40px;
     position: relative;
-    overflow: hidden;
-  }
-
-  &__text {
     flex: 1;
-    z-index: 2;
-  }
+    min-height: 0;
+    padding: 60px 40px;
+    overflow: hidden;
 
-  &__title {
-    font-size: 48px;
-    font-weight: 300;
-    line-height: 1.2;
-    color: #1a1a1a;
-    margin-bottom: 40px;
-  }
-
-  &__button {
-    display: inline-block;
-    padding: 20px 50px;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: #333333;
-      transform: translateY(-2px);
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 220px;
+      background: linear-gradient(
+              to bottom,
+              transparent,
+              #f5f5f5
+      );
+      z-index: 3;
+      pointer-events: none;
     }
   }
 
-  &__subtitle {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #888888;
+  &__text {
+    position: relative;
+    z-index: 2;
+    max-width: 400px;
   }
 
   &__image {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 55%;
-    height: 100%;
+    height: 85%;
+    z-index: 1;
 
     img {
-      width: 100%;
+      display: block;
+      width: auto;
       height: 100%;
+      max-width: none;
       object-fit: contain;
       object-position: right bottom;
     }
+  }
+
+  &__title {
+    margin: 0 0 40px;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 300;
+    line-height: 1.4;
+    color: #1a1a1a;
+  }
+
+  &__button {
+    padding: 20px 50px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888888;
   }
 }
 
 @media (max-width: 768px) {
   .start-screen {
     &__content {
-      flex-direction: column;
-      padding: 40px 20px;
+      padding: 90px 28px 20px;
+
+      &::after {
+        height: 120px;
+      }
+    }
+
+    &__text {
+      width: 100%;
     }
 
     &__title {
-      font-size: 32px;
+      margin-bottom: 28px;
+      font-size: clamp(28px, 8vw, 38px);
+      line-height: 1.25;
     }
 
     &__image {
-      position: relative;
-      width: 100%;
+      right: -22%;
+      bottom: 80px;
+      width: 125%;
       height: auto;
-      margin-top: 40px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
