@@ -77,7 +77,7 @@ const startQuiz = () => {
   &__image {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -80px;
     height: 90%;
     z-index: 1;
     animation: slideInRight 1.2s ease-out forwards;
