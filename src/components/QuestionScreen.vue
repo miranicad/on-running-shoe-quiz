@@ -1,11 +1,148 @@
 <script setup>
+import { ref, computed } from 'vue'
+import NavBar from './NavBar.vue'
+import quizData from '../../data.json'
 
+const emit = defineEmits(['quiz-complete'])
+
+const currentQuestionId = ref(0)
+const shoeRatings = ref({})
+
+
+quizData.shoes.forEach(shoe => {
+  shoeRatings.value[shoe.id] = 0
+})
+
+
+const currentQuestion = computed(() => {
+  return quizData.questions.find(q => q.id === currentQuestionId.value)
+})
+
+
+const selectAnswer = (answer) => {
+
+  for (const [shoeId, points] of Object.entries(answer.ratingIncrease)) {
+    shoeRatings.value[shoeId] += points
+  }
+
+
+  if (answer.nextQuestion === '') {
+
+    emit('quiz-complete', shoeRatings.value)
+  } else {
+
+    currentQuestionId.value = answer.nextQuestion
+  }
+}
 </script>
 
 <template>
+  <div class="question-screen">
+    <NavBar />
 
+    <main class="question-screen__content">
+      <div class="question-screen__header">
+        <p class="question-screen__subtitle">TRY ON QUIZ</p>
+        <p class="question-screen__subtitle">30 DAYS RISK FREE</p>
+      </div>
+
+
+      <h2 class="question-screen__question">
+        {{ currentQuestion.copy }}
+      </h2>
+
+
+      <div class="question-screen__answers">
+        <button
+          v-for="answer in currentQuestion.answers"
+          :key="answer.copy"
+          class="question-screen__answer"
+          @click="selectAnswer(answer)"
+        >
+          {{ answer.copy }}
+        </button>
+      </div>
+    </main>
+  </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.question-screen {
+  min-height: 100vh;
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
 
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    color: #ffffff;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: #c3c3c3;
+  }
+
+  &__question {
+    font-size: 42px;
+    font-weight: 300;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+  }
+
+  &__answers {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 200px;
+  }
+
+  &__answer {
+    flex: 1;
+    padding: 25px 40px;
+    font-size: 18px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ffffff;
+      color: #333333;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .question-screen {
+    &__question {
+      font-size: 28px;
+    }
+
+    &__answer {
+      padding: 20px;
+    }
+  }
+}
 </style>
