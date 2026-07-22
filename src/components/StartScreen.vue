@@ -202,7 +202,7 @@ const startQuiz = () => {
     &__image {
       right: -10%;
       top: auto;
-      bottom: 0;
+      bottom: -10%;
       width: auto;
       height: 70%;
 
