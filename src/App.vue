@@ -6,7 +6,7 @@ import LoadingScreen from "./components/LoadingScreen.vue"
 import ResultsScreen from "./components/ResultsScreen.vue"
 
 const currentScreen = ref('start')
-const quizResults = ref({})  // Speichert die Schuh-Ratings
+const quizResults = ref({})
 
 const startQuiz = () => {
   currentScreen.value = 'question'
@@ -22,7 +22,7 @@ const showResults = () => {
 }
 
 const restartQuiz = () => {
-  quizResults.value = {}  // Reset
+  quizResults.value = {}
   currentScreen.value = 'start'
 }
 </script>
