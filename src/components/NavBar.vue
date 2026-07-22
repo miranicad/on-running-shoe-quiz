@@ -1,3 +1,7 @@
+<script setup>
+const logoImage = `${import.meta.env.BASE_URL}assets/On-Logo.png`
+</script>
+
 <template>
   <nav class="navbar">
     <button class="navbar__menu" aria-label="Menu">
@@ -6,7 +10,7 @@
       <span class="navbar__menu-line"></span>
     </button>
     <div class="navbar__logo">
-     <img src="/assets/On-Logo.png">
+     <img :src="logoImage">
     </div>
   </nav>
 </template>

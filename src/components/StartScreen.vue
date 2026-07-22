@@ -3,6 +3,8 @@ import NavBar from './NavBar.vue'
 
 const emit = defineEmits(['start-quiz'])
 
+const backgroundImage = `${import.meta.env.BASE_URL}assets/Background Image Start Screen.png`
+
 const startQuiz = () => {
   emit('start-quiz')
 }
@@ -23,7 +25,7 @@ const startQuiz = () => {
         <p class="start-screen__subtitle">30 Days risk free</p>
       </div>
       <div class="start-screen__image">
-        <img src="/assets/Background Image Start Screen.png" alt="Runner" />
+        <img :src="backgroundImage" alt="Runner" />
       </div>
     </main>
   </div>

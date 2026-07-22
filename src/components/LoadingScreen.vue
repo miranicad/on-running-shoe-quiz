@@ -4,6 +4,8 @@ import NavBar from './NavBar.vue'
 
 const emit = defineEmits(['loading-complete'])
 
+const loaderImage = `${import.meta.env.BASE_URL}assets/loader.gif`
+
 onMounted(() => {
   setTimeout(() => {
     emit('loading-complete')
@@ -16,7 +18,7 @@ onMounted(() => {
     <NavBar />
 
     <main class="loading-screen__content">
-      <img src="/assets/loader.gif" alt="Loading..." class="loading-screen__loader" />
+      <img :src="loaderImage" alt="Loading..." class="loading-screen__loader" />
       <p class="loading-screen__text">We're running to get your results.</p>
     </main>
   </div>

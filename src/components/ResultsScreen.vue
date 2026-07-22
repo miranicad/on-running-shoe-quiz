@@ -44,7 +44,7 @@ const topShoesText = computed(() => {
 })
 
 const getShoeImage = (shoeName) => {
-  return `/assets/${shoeName}.png`
+  return `${import.meta.env.BASE_URL}assets/${shoeName}.png`
 }
 
 const restartQuiz = () => {
