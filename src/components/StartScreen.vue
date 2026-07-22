@@ -30,10 +30,11 @@ const startQuiz = () => {
 </template>
 
 <style lang="scss" scoped>
+@import '../style.scss';
 
 .start-screen {
   min-height: 100svh;
-  background-color: #f5f5f5;
+  background-color: $light-bg;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -55,7 +56,7 @@ const startQuiz = () => {
       background: linear-gradient(
               to bottom,
               transparent,
-              #f5f5f5
+              $light-bg
       );
       z-index: 3;
       pointer-events: none;
@@ -92,7 +93,7 @@ const startQuiz = () => {
     font-size: clamp(32px, 4vw, 48px);
     font-weight: 300;
     line-height: 1.4;
-    color: #1a1a1a;
+    color: $dark-text;
   }
 
   &__button {
@@ -100,8 +101,8 @@ const startQuiz = () => {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-color: $dark-bg;
+    color: $white;
     border: 0;
     cursor: pointer;
   }
@@ -109,7 +110,7 @@ const startQuiz = () => {
   &__subtitle {
     margin-top: 20px;
     font-size: 12px;
-    color: #888888;
+    color: $gray-text;
   }
 }
 

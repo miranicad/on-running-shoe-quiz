@@ -67,9 +67,11 @@ const selectAnswer = (answer) => {
 </template>
 
 <style lang="scss" scoped>
+@import '../style.scss';
+
 .question-screen {
   min-height: 100vh;
-  background-color: #333333;
+  background-color: $question-bg;
   display: flex;
   flex-direction: column;
 
@@ -79,7 +81,7 @@ const selectAnswer = (answer) => {
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    color: #ffffff;
+    color: $white;
   }
 
   &__header {
@@ -87,16 +89,10 @@ const selectAnswer = (answer) => {
     margin-bottom: 80px;
   }
 
-  &__title {
-    font-size: 14px;
-    letter-spacing: 4px;
-    margin-bottom: 8px;
-  }
-
   &__subtitle {
     font-size: 12px;
     letter-spacing: 6px;
-    color: #c3c3c3;
+    color: $light-gray;
   }
 
   &__question {
@@ -122,14 +118,14 @@ const selectAnswer = (answer) => {
     padding: 25px 40px;
     font-size: 18px;
     background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
+    color: $white;
+    border: 1px solid $white;
     cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: #ffffff;
-      color: #333333;
+      background-color: $white;
+      color: $question-bg;
     }
   }
 }

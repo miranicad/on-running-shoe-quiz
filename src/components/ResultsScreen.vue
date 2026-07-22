@@ -104,9 +104,11 @@ const restartQuiz = () => {
 </template>
 
 <style lang="scss" scoped>
+@import '../style.scss';
+
 .results-screen {
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: $white;
   display: flex;
   flex-direction: column;
 
@@ -128,7 +130,7 @@ const restartQuiz = () => {
 
     p {
       font-size: 14px;
-      color: #666666;
+      color: $medium-gray;
       line-height: 1.5;
     }
   }
@@ -138,18 +140,18 @@ const restartQuiz = () => {
   }
 
   &__card {
-    background-color: #f8f8f8;
+    background-color: $card-bg;
     padding: 30px 20px;
     margin-bottom: 15px;
 
     &--main {
-      background-color: #f8f8f8;
+      background-color: $card-bg;
     }
 
     h2 {
       font-size: 22px;
       font-weight: 400;
-      color: #1a1a1a;
+      color: $dark-text;
       margin-bottom: 10px;
     }
   }
@@ -171,14 +173,14 @@ const restartQuiz = () => {
 
   &__description {
     font-size: 14px;
-    color: #666666;
+    color: $medium-gray;
     line-height: 1.5;
     margin-bottom: 15px;
   }
 
   &__price {
     font-size: 14px;
-    color: #1a1a1a;
+    color: $dark-text;
     font-weight: 500;
     margin-bottom: 20px;
   }
@@ -188,8 +190,8 @@ const restartQuiz = () => {
     width: 50%;
     margin: 0 auto;
     padding: 15px 30px;
-    background-color: #016565;
-    color: #ffffff;
+    background-color: $primary-color;
+    color: $white;
     border: none;
     cursor: pointer;
     font-size: 14px;
@@ -198,7 +200,7 @@ const restartQuiz = () => {
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #014a4a;
+      background-color: $primary-color-hover;
     }
   }
 
@@ -218,13 +220,13 @@ const restartQuiz = () => {
     padding: 10px 20px;
     background: none;
     border: none;
-    color: #666666;
+    color: $medium-gray;
     font-size: 14px;
     cursor: pointer;
     text-decoration: underline;
 
     &:hover {
-      color: #1a1a1a;
+      color: $dark-text;
     }
   }
 }

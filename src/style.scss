@@ -1,11 +1,15 @@
 // Variables
-$primary-color: #00a6a6;
+$primary-color: #016565;
+$primary-color-hover: #014a4a;
 $dark-bg: #1a1a1a;
+$question-bg: #333333;
 $light-bg: #f5f5f5;
+$card-bg: #f8f8f8;
 $white: #ffffff;
-$light-text: #ffffff;
 $dark-text: #1a1a1a;
 $gray-text: #888888;
+$medium-gray: #666666;
+$light-gray: #c3c3c3;
 $font-family: 'Roboto', sans-serif;
 
 // Reset & Base
@@ -13,6 +17,10 @@ $font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+button, input {
+  font-family: inherit;
 }
 
 html, body {
@@ -31,30 +39,4 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-// Transitions
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.4s ease;
-}
-
-.slide-enter-from {
-  transform: translateX(50px);
-  opacity: 0;
-}
-
-.slide-leave-to {
-  transform: translateX(-50px);
-  opacity: 0;
 }

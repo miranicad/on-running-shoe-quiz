@@ -23,9 +23,11 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@import '../style.scss';
+
 .loading-screen {
   min-height: 100vh;
-  background-color: #333333;
+  background-color: $question-bg;
   display: flex;
   flex-direction: column;
 
@@ -45,7 +47,7 @@ onMounted(() => {
   }
 
   &__text {
-    color: #666666;
+    color: $medium-gray;
     font-size: 18px;
     letter-spacing: 2px;
   }

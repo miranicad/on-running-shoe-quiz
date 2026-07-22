@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <nav class="navbar">
     <button class="navbar__menu" aria-label="Menu">
@@ -15,12 +12,14 @@
 </template>
 
 <style lang="scss" scoped>
+@import '../style.scss';
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px 40px;
-  background-color: #ffffff;
+  background-color: $white;
   position: relative;
 
   &__menu {
@@ -38,12 +37,12 @@
       display: block;
       width: 24px;
       height: 2px;
-      background-color: #1a1a1a;
+      background-color: $dark-text;
       transition: background-color 0.3s ease;
     }
 
     &:hover .navbar__menu-line {
-      background-color: #00a6a6;
+      background-color: $primary-color;
     }
   }
 
