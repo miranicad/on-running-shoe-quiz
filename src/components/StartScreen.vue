@@ -51,7 +51,7 @@ const startQuiz = () => {
       right: 0;
       bottom: 0;
       left: 0;
-      height: 220px;
+      height: 350px;
       background: linear-gradient(
               to bottom,
               transparent,
@@ -65,14 +65,14 @@ const startQuiz = () => {
   &__text {
     position: relative;
     z-index: 2;
-    max-width: 400px;
+    max-width: 500px;
   }
 
   &__image {
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 85%;
+    height: 90%;
     z-index: 1;
 
     img {
@@ -111,18 +111,49 @@ const startQuiz = () => {
   }
 }
 
+@media (max-width: 1024px) and (min-width: 769px) {
+  .start-screen {
+    &__content {
+      padding: 50px 30px;
+
+      &::after {
+        height: 300px;
+      }
+    }
+
+    &__text {
+      max-width: 450px;
+    }
+
+    &__title {
+      font-size: clamp(30px, 5vw, 42px);
+      margin-bottom: 35px;
+    }
+
+    &__image {
+      height: 85%;
+      right: 0;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .start-screen {
     &__content {
       padding: 90px 28px 20px;
 
       &::after {
-        height: 120px;
+        height: 250px;
       }
     }
 
     &__text {
       width: 100%;
+      max-width: 400px;
     }
 
     &__title {
@@ -132,15 +163,16 @@ const startQuiz = () => {
     }
 
     &__image {
-      right: -22%;
-      bottom: 80px;
-      width: 125%;
-      height: auto;
+      right: -10%;
+      top: auto;
+      bottom: 0;
+      width: auto;
+      height: 70%;
 
       img {
         display: block;
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
       }
     }
   }
