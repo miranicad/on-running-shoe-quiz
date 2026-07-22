@@ -130,6 +130,8 @@ const selectAnswer = (answer) => {
 
     &__answer {
       padding: 20px;
+      font-size: 14px;
+      white-space: nowrap;
     }
   }
 }
