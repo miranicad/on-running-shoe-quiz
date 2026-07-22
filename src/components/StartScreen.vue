@@ -66,6 +66,7 @@ const startQuiz = () => {
     position: relative;
     z-index: 2;
     max-width: 500px;
+    animation: slideInLeft 1.2s ease-out forwards;
   }
 
   &__image {
@@ -74,6 +75,7 @@ const startQuiz = () => {
     bottom: 0;
     height: 90%;
     z-index: 1;
+    animation: runIn 1.2s ease-out forwards;
 
     img {
       display: block;
@@ -95,7 +97,7 @@ const startQuiz = () => {
 
   &__button {
     padding: 20px 50px;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 3px;
     background-color: #1a1a1a;
@@ -108,6 +110,34 @@ const startQuiz = () => {
     margin-top: 20px;
     font-size: 12px;
     color: #888888;
+  }
+}
+
+@keyframes runIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
